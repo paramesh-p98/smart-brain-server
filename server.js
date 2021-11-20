@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));  //body-parser deprecated in l
 app.use(express.json());
 app.use(cors());
 
-
+app.get('/', (req, res) => { res.send("Server Working") })
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, knex, bcrypt) })
 app.post('/register', (req, res) => { register.handleRegister(req, res, knex, bcrypt) })
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, knex) })
